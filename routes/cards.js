@@ -5,3 +5,5 @@ import * as cardsCtrl from '../controllers/cards.js'
 export { 
   router
 }
+
+router.post('/search', cardsCtrl.pokeSearch)
