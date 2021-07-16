@@ -4,5 +4,20 @@
 <a href="/users/new">
   <button class="btn btn-success">Add a User</button>
 </a>
+<br><br>
+<div class="row row-cols-3 row-cols-md-2 g-4">
+<% users.forEach(user => {%>
+  <a href="/users/<%= user._id %>">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= user.name %></h5>
+          <p class="card-text"><%= user.email%></p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% }) %> 
+</div>  
 
 <%- include('../partials/footer.ejs') %> 
