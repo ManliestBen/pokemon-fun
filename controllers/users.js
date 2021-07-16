@@ -1,10 +1,23 @@
 import { User } from '../models/user.js'
+import { Card } from '../models/card.js'
 
 export {
   index,
   newUser as new,
   create,
-  show
+  show,
+  addCard
+}
+
+function addCard(req, res) {
+  User.findById(req.body.userId)
+  .then(user => {
+    user.cards.push(req.params.cardId)
+    user.save()
+    .then(()=> {
+      res.redirect(`/users/${user._id}`)
+    })
+  })
 }
 
 function show(req, res) {

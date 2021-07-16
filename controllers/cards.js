@@ -5,8 +5,10 @@ import axios from 'axios'
 export {
   pokeSearch,
   create,
-  index
+  index,
 }
+
+
 
 function index(req, res) {
   Card.find({})
