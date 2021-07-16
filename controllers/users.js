@@ -3,7 +3,17 @@ import { User } from '../models/user.js'
 export {
   index,
   newUser as new,
-  create
+  create,
+  show
+}
+
+function show(req, res) {
+  User.findById(req.params.id)
+  .then(user => {
+    res.render('users/show', {
+      user
+    })
+  })
 }
 
 function create(req, res) {

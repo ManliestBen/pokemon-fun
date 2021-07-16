@@ -8,4 +8,5 @@ export {
 
 router.get('/', usersCtrl.index)
 router.get('/new', usersCtrl.new)
+router.get('/:id', usersCtrl.show)
 router.post('/', usersCtrl.create)
