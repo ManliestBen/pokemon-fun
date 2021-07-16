@@ -1,0 +1,21 @@
+<%- include('../partials/nav.ejs') %> 
+<h1>Card List</h1>
+
+<div class="row row-cols-3 row-cols-md-2 g-4">
+  <% cards.forEach(card => { %>
+    <div class="col">
+      <div class="card">
+        <img src="<%= card.imgUrl %>" class="card-img-top" alt="pokemon-img">
+        <div class="card-body">
+          <h5 class="card-title"><%= card.name %></h5>
+          <h6 class="card-text">Type: <%= card.type %></h6>
+          <p class="card-text">Price: $<%= card.price %></p>
+        </div>
+      </div>
+    </div>
+<% }) %> 
+
+</div>  
+
+
+<%- include('../partials/footer.ejs') %> 

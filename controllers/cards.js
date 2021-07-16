@@ -17,6 +17,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  req.body.holographic = !!req.body.holographic
   Card.create(req.body)
   .then(()=> {
     res.redirect('/cards')
