@@ -1,7 +1,12 @@
 import { User } from '../models/user.js'
 
 export {
-  index
+  index,
+  newUser as new
+}
+
+function newUser(req, res) {
+  res.render('users/new')
 }
 
 function index(req, res) {

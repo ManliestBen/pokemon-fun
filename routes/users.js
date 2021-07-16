@@ -7,3 +7,4 @@ export {
 }
 
 router.get('/', usersCtrl.index)
+router.get('/new', usersCtrl.new)
