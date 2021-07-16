@@ -6,4 +6,6 @@ export {
   router
 }
 
+router.get('/', cardsCtrl.index)
+router.post('/', cardsCtrl.create)
 router.post('/search', cardsCtrl.pokeSearch)
