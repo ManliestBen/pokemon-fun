@@ -2,7 +2,15 @@ import { User } from '../models/user.js'
 
 export {
   index,
-  newUser as new
+  newUser as new,
+  create
+}
+
+function create(req, res) {
+  User.create(req.body)
+  .then(()=> {
+    res.redirect('/users')
+  })
 }
 
 function newUser(req, res) {
