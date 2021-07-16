@@ -1,4 +1,5 @@
 import { Card } from '../models/card.js'
+import { User } from '../models/user.js'
 import axios from 'axios'
 
 export {
@@ -10,8 +11,12 @@ export {
 function index(req, res) {
   Card.find({})
   .then(cards => {
-    res.render('cards/index', {
-      cards
+    User.find({})
+    .then(users => {
+      res.render('cards/index', {
+        cards,
+        users
+      })
     })
   })
 }

@@ -10,6 +10,12 @@
           <h5 class="card-title"><%= card.name %></h5>
           <h6 class="card-text">Type: <%= card.type %></h6>
           <p class="card-text">Price: $<%= card.price %></p>
+          <select name="userId" >
+            <option>Select A User</option>
+            <% users.forEach(user => { %>
+              <option value="<%= user.name %>"><%= user.name %></option>
+            <% }) %>  
+          </select>
         </div>
       </div>
     </div>
