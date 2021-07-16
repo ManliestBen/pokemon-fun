@@ -24,7 +24,6 @@ const cardSchema = new Schema({
   holographic: Boolean,
   imgUrl: String,
   abilities: [abilitySchema],
-  cardUrl: String
 }, {
   timestamps: true
 })

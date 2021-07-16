@@ -6,9 +6,10 @@ export {
 }
 
 function pokeSearch(req, res) {
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.query}`)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.search}`)
   .then(response => {
-    console.log(response.data)
-    res.redirect('/users')
+    res.render('cards/search', {
+      pokemon: response.data
+    })
   })
 }

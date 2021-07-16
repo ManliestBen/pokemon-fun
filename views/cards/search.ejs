@@ -1,0 +1,39 @@
+<%- include('../partials/nav.ejs') %> 
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="<%= pokemon.sprites.front_default %>" class="card-img-top" alt="pokemon-img">
+      <div class="card-body">
+        <div class="card-content">
+          <h4><%= pokemon.species.name %></h4>
+          <p>Type: <%= pokemon.types[0].type.name %> </p>
+          <p>Ability 1: <%= pokemon.abilities[0].ability.name %> </p>
+          <p>Ability 2: <%= pokemon.abilities[1].ability.name %> </p>
+          <p><%= pokemon.stats[0].stat.name %>: <%= pokemon.stats[0].base_stat %> </p>
+          <p><%= pokemon.stats[1].stat.name %>: <%= pokemon.stats[1].base_stat %> </p>
+          <p><%= pokemon.stats[2].stat.name %>: <%= pokemon.stats[2].base_stat %> </p>
+          <p><%= pokemon.stats[3].stat.name %>: <%= pokemon.stats[3].base_stat %> </p>
+          <p><%= pokemon.stats[4].stat.name %>: <%= pokemon.stats[4].base_stat %> </p>
+          <p><%= pokemon.stats[5].stat.name %>: <%= pokemon.stats[5].base_stat %> </p>
+          <form action="???" method="POST">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Price</label>
+              <input type="text" class="form-control" placeholder="Price" name="price" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="holographic" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Holographic?</label>
+            </div>
+            <input type="text" hidden value="<%= pokemon.species.name %>" name="name">
+            <input type="text" hidden value="<%= pokemon.sprites.front_default %>" name="imgUrl">
+            <input type="text" hidden value="<%= pokemon.types[0].type.name %>" name="type">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<%- include('../partials/footer.ejs') %> 
