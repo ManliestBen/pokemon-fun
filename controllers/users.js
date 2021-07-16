@@ -22,6 +22,7 @@ function addCard(req, res) {
 
 function show(req, res) {
   User.findById(req.params.id)
+  .populate('cards')
   .then(user => {
     res.render('users/show', {
       user
